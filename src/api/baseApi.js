@@ -1,2 +1,2 @@
 
-export const baseApi = process.env.REACT_APP_BASE_URL;
+export const baseApi = 'http://pay.asadalpay.com/api/bids/create-bid-finance';
