@@ -1,7 +1,7 @@
 import React from 'react';
 import './order.css';
 import {useFormik} from "formik";
-import {baseApi} from "../api/baseApi";
+import {apiKey, baseApi} from "../api/baseApi";
 import axios from "axios";
 
 function Order (props) {
@@ -43,7 +43,6 @@ function Order (props) {
     validate,
     onSubmit: async values => {
       try {
-
         const resp = await axios.post(baseApi, {
           "currency": "KZT",
           "external_id": "1",
@@ -58,11 +57,12 @@ function Order (props) {
         },
           {
           headers: {
-          'api-key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdhbF9lbnRpdHlfaWQiOjExLCJjcmVhdGVkX2F0IjoiMjAyMy0wNy0xNCAwOToxNjoxOC40MTA0OTQiLCJwYXNzd29yZCI6IjhiMjRiNDM3LWQzNzQtNGFlMS1hOGFlLTFkNjA4ZDEwM2NkYSJ9.5FjjmH7q1On8AdtiOnirzBl347wspBumOYzwDNcyun4'
+            'api-key': apiKey
           }
         }
         )
-        window.location.href = resp.data.checkout_url;
+        console.log(resp.data)
+        // window.location.href = resp.data.checkout_url;
       } catch (err) {
         console.log(err)
       }
