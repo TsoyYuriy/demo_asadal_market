@@ -28,6 +28,7 @@ p {
 	background: #FFF;
 	padding: 0 28px;
 	box-sizing: border-box;
+	padding-bottom: 30px;
 }
 .header {
 	display: flex;
@@ -61,7 +62,7 @@ p {
 }
 .quantity-label p,
 .description p:first-child,
-.delivery p{
+.delivery__label p{
 	font-size: 18px;
 	font-weight: 800;
 	line-height: 50px;
@@ -72,11 +73,27 @@ p {
 .delivery {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
+	align-items: inherit;
 }
+.delivery__label {
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.delivery__label p {
+	line-height: 30px;
+	margin-bottom: 10px;
+	align-self: flex-start;
+}
+.delivery__label input {
+	padding: 15px 5px;
+	border-radius: 10px;
+	border: 1px solid darkgray;
+	outline: none;
+}
+
 .btn-wrap {
-	text-align: right;
+	text-align: center;
 }
 .btn {
 	border-radius: 10px;

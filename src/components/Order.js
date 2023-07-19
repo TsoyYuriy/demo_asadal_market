@@ -16,7 +16,8 @@ function Order (props) {
       "price": 200,
       "quantity": 1,
     },
-    "phone": ""
+    "phone": "",
+    "address": ""
   }
 
   const validate = values => {
@@ -25,6 +26,10 @@ function Order (props) {
       errors.phone = 'Это обязательно поля';
     } else if (!/^\d{10}$/.test(values.phone)) {
       errors.phone = 'Не правильно введен номер';
+    }
+
+    if (!values.address) {
+      errors.address = 'Это обязательно поля';
     }
 
     if (!values.product.quantity) {
@@ -96,22 +101,38 @@ function Order (props) {
           </label>
           {formik.errors.product?.quantity ? <div className={'error-quantity'}>{formik.errors.product.quantity}</div> : null}
 
-          <label className={'delivery'}>
-            <p>Номер для доставки:</p>
-            <input
-              type="phone"
-              name="phone"
-              value={formik.values.phone}
-              onChange={formik.handleChange}
-              placeholder={'Номер телефона'}/>
-          </label>
-          {formik.errors.phone ? <div className={'error-phone'}>{formik.errors.phone}</div> : null}
-
-
           <div className="description">
             <p>Описание:</p>
             <p>{product.description}</p>
           </div>
+          <div className="delivery">
+            <h2>Доставка</h2>
+
+            <label className={'delivery__label'}>
+              <p>Адрес:</p>
+              <input
+                type="phone"
+                name="address"
+                value={formik.values.address}
+                onChange={formik.handleChange}
+                placeholder={'ул.Желтоксан 134, кв.55'}/>
+                {formik.errors.address ? <span className={'error-phone'}>{formik.errors.address}</span> : null}
+            </label>
+
+            <label className={'delivery__label'}>
+              <p>Телефона:</p>
+              <input
+                type="phone"
+                name="phone"
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+                placeholder={'87073336677'}/>
+                {formik.errors.phone ? <span className={'error-phone'}>{formik.errors.phone}</span> : null}
+            </label>
+
+          </div>
+
+
 
           <div className="btn-wrap">
             <button type="submit" className={'btn'}>Оплатить</button>
