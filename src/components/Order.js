@@ -24,7 +24,7 @@ function Order (props) {
     if (!values.phone) {
       errors.phone = 'Это обязательно поля';
     } else if (!/^\d{10}$/.test(values.phone)) {
-      errors.phone = 'Не правильно введен номер'; // Введите сообщение об ошибке для невалидного номера телефона
+      errors.phone = 'Не правильно введен номер';
     }
 
     if (!values.product.quantity) {
@@ -43,26 +43,26 @@ function Order (props) {
     validate,
     onSubmit: async values => {
       try {
-        const resp = await axios.post(baseApi, {
-          "currency": "KZT",
-          "external_id": "1",
-          "description": "Стильная шариковая ручка Berlingo I-10",
-          "attempts": 5,
-          "mcc": "5533",
-          "capture_method": "HOLD",
-          "back_url": "https://asadalpay.com",
-          "products": [
-            values.product
-          ]
-        },
+        const resp = await axios.post(baseApi,
           {
-          headers: {
-            'api-key': apiKey
+            "currency": "KZT",
+            "external_id": "3",
+            "description": "Стильная шариковая ручка Berlingo I-10",
+            "attempts": 5,
+            "mcc": "5533",
+            "capture_method": "HOLD",
+            "back_url": "https://asadalpay.com",
+            "products": [
+              values.product
+            ]
+          },
+          {
+            headers: {
+              'api-key': apiKey
+            }
           }
-        }
         )
-        console.log(resp.data)
-        // window.location.href = resp.data.checkout_url;
+        window.location.href = resp.data.checkout_url;
       } catch (err) {
         console.log(err)
       }

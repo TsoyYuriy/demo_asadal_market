@@ -1,3 +1,3 @@
 
-export const baseApi = 'https://pay.asadalpay.com/api/bids/create-bid-finance';
-export const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdhbF9lbnRpdHlfaWQiOjExLCJjcmVhdGVkX2F0IjoiMjAyMy0wNy0xNCAwOToxNjoxOC40MTA0OTQiLCJwYXNzd29yZCI6IjhiMjRiNDM3LWQzNzQtNGFlMS1hOGFlLTFkNjA4ZDEwM2NkYSJ9.5FjjmH7q1On8AdtiOnirzBl347wspBumOYzwDNcyun4"
+export const baseApi = 'https://api.asadalpay.com/api/bids/create-bid-finance';
+export const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdhbF9lbnRpdHlfaWQiOjEsImNyZWF0ZWRfYXQiOiIyMDIzLTA3LTE5IDA2OjU2OjE4LjUyODA5MyIsInBhc3N3b3JkIjoiOTRlMDNjYzUtMTMyYy00ZTJmLWE2YTYtYzI0ZDVlZDM0MjJkIn0.UBt3SXNwv5xg8KRAKBwUqyCh7iHmlbXM_vn5lOvK8J4"
